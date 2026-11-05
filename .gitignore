@@ -1,0 +1,22 @@
+# Provider plugins, downloaded again by `terraform init`
+.terraform/
+
+# State: Terraform's record of what exists; can hold secrets in plain text
+*.tfstate
+*.tfstate.*
+
+# Your personal values (OCIDs, regions, etc.)
+*.tfvars
+*.tfvars.json
+
+# Saved plans can contain secrets too
+*.tfplan
+
+# Terraform crash dumps
+crash.log
+crash.*.log
+
+# Private keys and local secrets, in case one is copied in by mistake
+*.pem
+*.key
+.env
