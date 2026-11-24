@@ -4,3 +4,10 @@ resource "oci_core_vcn" "AsSaee_VCN" {
     display_name = "AsSaee_VCN"
     
 }
+
+resource "oci_core_internet_gateway" "AsSaee_Internet_Gateway" {
+    compartment_id = var.tenancy_ocid
+    vcn_id = oci_core_vcn.AsSaee_VCN.id
+    display_name = var.internet_gateway_display_name
+
+}
