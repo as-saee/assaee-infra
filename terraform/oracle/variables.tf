@@ -14,3 +14,16 @@ variable "internet_gateway_display_name" {
   default = "oci_core_internet_gateway"
   description = "Display name for internet gateway"
 }
+
+variable "route_table_display_name"{
+  type = string 
+  default = "route_table_display_name"
+  description = "Display Name for VCN Route Table"
+}
+
+variable "route_table_route_rules_destination" {
+  type = string 
+  default = "0.0.0.0/0"
+  description = "The Destination CIDR for internet route"
+}
+
