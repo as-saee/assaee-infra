@@ -35,3 +35,13 @@ resource "oci_core_security_list" "AsSaee_Security_List" {
     protocol    = "all"
   }
 }
+
+resource "oci_core_subnet" "AsSaee_Subnet" {
+  compartment_id = var.tenancy_ocid
+  vcn_id         = oci_core_vcn.AsSaee_VCN.id
+
+  display_name      = "AsSaee_Subnet"
+  cidr_block        = "10.0.0.0/24"
+  route_table_id    = oci_core_route_table.AsSaee_Route_Table.id
+  security_list_ids = [oci_core_security_list.AsSaee_Security_List.id]
+}
